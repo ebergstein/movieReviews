@@ -1,0 +1,30 @@
+<div id = "wrapper">
+  <a class = "header" [routerLink]="['../../dashboard']">Home</a>
+  <a class = "header" href = "/logout">Logout</a>
+  <div *ngIf = "movie">
+    <h2 *ngIf = "movie.title">{{movie.title}}</h2>
+    <img *ngIf = "movie.poster_path" src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}"/>
+    <p *ngIf = "movie.overview">{{movie.overview}}</p>
+    <p *ngIf = "movie.release_date">Release Date: {{movie.release_date}}</p>
+      <div *ngIf = "reviews">
+      <h3>Reviews:</h3>
+      <table>
+        <tr>
+          <th>Header</th>
+          <th>Rating</th>
+          <th>User Name</th>
+        </tr>
+        <tr *ngFor = "let review of reviews">
+          <td><a [routerLink]="['../../review', review._id]">{{review.header}}</a></td>
+          <td>{{review.rating}}/10</td>
+          <td><a [routerLink]="['../../user', review._user._id]">{{review._user.name}}</a></td>
+        </tr>
+      </table>
+      </div>
+    <img *ngIf = "movie.backdrop_path" src = "https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"/>
+  </div>
+
+
+  <p>Movie data was obtained from The Movie DB</p>
+  <p *ngFor = "let error of errors">{{error}}</p>
+</div>

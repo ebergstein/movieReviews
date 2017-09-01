@@ -1,0 +1,22 @@
+<div id = "wrapper">
+  <a class = "header" [routerLink]="['../../dashboard']">Home</a>
+  <a class = "header" href = "/logout">Logout</a>
+  <h2 *ngIf = "user">Username: {{user[0].name}}</h2>
+  <p>Posted:</p>
+  <p *ngIf = "user">{{user[0]._reviews.length}} Topic/s</p>
+  <div *ngIf = "user">
+    <table>
+      <tr>
+        <th>Movie</th>
+        <th>Header</th>
+        <th>Rating</th>
+      </tr>
+      <tr *ngFor = "let review of user[0]._reviews">
+        <td><a [routerLink]="['../../movie', review.movie]">{{review.movie}}</a></td>
+        <td><a [routerLink]="['../../review', review._id]">{{review.header}}</a></td>
+        <td>{{review.rating}}/10</td>
+      </tr>
+    </table>
+  </div>
+  <p *ngIf = "errors">{{errors}}</p>
+</div>

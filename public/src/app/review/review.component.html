@@ -1,0 +1,9 @@
+<div id = "wrapper">
+  <a class = "header" [routerLink]="['../../dashboard']">Home</a>
+  <a class = "header" href = "/logout">Logout</a>
+  <h2 *ngIf = "review">{{review[0].header}}</h2>
+  <h3 *ngIf = "review">A review of <a [routerLink]="['../../movie', review[0].movie]">{{review[0].movie}}</a></h3>
+  <h3 *ngIf = "review">By <a [routerLink]="['../../user', review[0]._user._id]">{{review[0]._user.name}}</a></h3>
+  <p *ngIf = "review">{{review[0].review}}</p>
+  <p *ngIf = "errors">{{errors}}</p>
+</div>

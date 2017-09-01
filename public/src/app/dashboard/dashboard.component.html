@@ -1,0 +1,29 @@
+<div id = "wrapper">
+  <h2 class = "header" *ngIf = "user">Welcome, {{user.name}}!</h2>
+  <a class = "header" id = "logout" href = "/logout">Logout</a>
+  <table>
+    <tr>
+      <th>Movie</th>
+      <th>Header</th>
+      <th>Rating</th>
+      <th>User Name</th>
+    </tr>
+    <tr *ngFor = "let review of reviews">
+      <td><a [routerLink]="['../movie', review.movie]">{{review.movie}}</a></td>
+      <td><a [routerLink]="['../review', review._id]">{{review.header}}</a></td>
+      <td>{{review.rating}}/10</td>
+      <td><a [routerLink]="['../user', review._user._id]">{{review._user.name}}</a></td>
+    </tr>
+  </table>
+  <h2>Add a new Review</h2>
+  <div id = "form">
+    <form (submit) = "makeReview(formData)" #formData = "ngForm">
+      <label>Movie: <input type = "text" name = "movie" ngModel></label>
+      <label>Header: <input type = "text" name = "header" ngModel></label>
+      <label>Review: <textarea name = "review" ngModel></textarea></label>
+      <label>Rating: <input type = "number" name = "rating" ngModel></label>
+      <input type = "submit" value = "Submit">
+    </form>
+  </div>
+  <p *ngFor = "let error of errors">{{error}}</p>
+</div>

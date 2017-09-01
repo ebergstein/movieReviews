@@ -1,0 +1,29 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+#wrapper{
+  font-family: arial;
+  border: 2px solid blue;
+  background-color: lightgrey;
+}
+.header{
+  display: inline;
+}
+#logout{
+  /*padding-left: 85%;*/
+  float: right;
+  vertical-align: top;
+}
+td, th{
+  border: 1px solid black;
+  width: 30%;
+}
+#form{
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 20px;
+}
+label{
+  display: inline-block;
+}

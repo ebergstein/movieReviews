@@ -1,0 +1,17 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+#wrapper{
+  font-family: arial;
+  border: 2px solid blue;
+  background-color: lightgrey;
+}
+.header{
+  display: inline;
+}
+#logout{
+  padding-left: 85%;
+  padding-bottom: 80%;
+  vertical-align: top;
+}

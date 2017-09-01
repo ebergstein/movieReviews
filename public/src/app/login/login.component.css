@@ -1,0 +1,11 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+#wrapper{
+  font-family: arial;
+  border: 2px solid blue;
+  padding: 2%;
+  margin: 2%;
+  background-color: lightgrey;
+}
